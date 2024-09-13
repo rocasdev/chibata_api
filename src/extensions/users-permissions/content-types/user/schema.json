@@ -98,12 +98,6 @@
       "target": "api::event.event",
       "mappedBy": "assistants"
     },
-    "notifications": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::notification.notification",
-      "mappedBy": "user"
-    },
     "role_path": {
       "type": "enumeration",
       "enum": [

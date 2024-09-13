@@ -732,11 +732,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToMany',
       'api::event.event'
     >;
-    notifications: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'oneToMany',
-      'api::notification.notification'
-    >;
     role_path: Attribute.Enumeration<['/admin', '/volunteer', '/organizer']> &
       Attribute.Required;
     name: Attribute.String & Attribute.Required;
@@ -966,7 +961,7 @@ export interface ApiNotificationNotification extends Schema.CollectionType {
   attributes: {
     user: Attribute.Relation<
       'api::notification.notification',
-      'manyToOne',
+      'oneToOne',
       'plugin::users-permissions.user'
     >;
     title: Attribute.String & Attribute.Required;
