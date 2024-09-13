@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "organizations",
+  "info": {
+    "singularName": "organization",
+    "pluralName": "organizations",
+    "displayName": "Organization",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "nit": {
+      "type": "biginteger",
+      "required": true,
+      "unique": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "contact_number": {
+      "type": "biginteger",
+      "required": true,
+      "unique": true
+    },
+    "website": {
+      "type": "text"
+    },
+    "state": {
+      "type": "boolean",
+      "required": true
+    },
+    "members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}
